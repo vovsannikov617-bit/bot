@@ -335,6 +335,12 @@ def generate_phone_db():
 
 
 PHONE_DATABASE = generate_phone_db()
+try:
+    from тксерь import EXTRA_PHONES
+    PHONE_DATABASE = PHONE_DATABASE + EXTRA_PHONES
+    print(f"📱 Доп. база: {len(EXTRA_PHONES)} шт")
+except Exception as e:
+    print(f"⚠️ Не загрузилась доп. база: {e}")
 print(f"📱 База телефонов: {len(PHONE_DATABASE)} шт")
 
 
